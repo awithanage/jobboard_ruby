@@ -1,0 +1,5 @@
+%h2{:class => "show_job", :id => "message"}= @company.c_name
+%h4{:class => "show_job_descr"}= simple_format @company.c_description
+%br/
+%br/
+= link_to "Delete", company_path(@company), method: :delete, data: { confirm: "Are you sure?" } 
