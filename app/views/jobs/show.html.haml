@@ -1,0 +1,12 @@
+%h2{:class => "show_job", :id => "message"}= @job.title 
+%h4{:class => "show_job_descr"}= simple_format @job.description
+%p{style:"font-weight:bold"}= @job.company
+%p{style:"font-weight:bold"}= @job.category.name
+
+%br/
+%br/
+
+%img= image_tag @job.image.url(:medium)
+%br/
+%br/
+= link_to "Delete", job_path(@job), method: :delete, data: { confirm: "Are you sure?" }

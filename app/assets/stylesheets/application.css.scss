@@ -1,0 +1,196 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require sweetalert
+ *= require bootstrap-datepicker
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+  background: -webkit-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+  background:    -moz-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+  background:     -ms-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+  background:      -o-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+  background:         linear-gradient(90deg, #1D976C 10%, #93F9B9 90%);
+  font-family: 'Lato', sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.navbar-default {
+	background-color: white;
+	border-radius: 0;
+	height: 80px;
+	padding: 15px 0;
+	border: none;
+}
+
+.navbar-brand {
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-size: 2em;
+	font-weight: 300;
+	color: #1D976C !important;
+}
+
+#jobs {
+	.job {
+		padding: 1em 0;
+		border-bottom: 1px solid rgba(250,250,250, 0.5);
+		h2 {
+			font-size: 2.5em;
+			font-weight: 300;
+			margin-bottom: 0;
+			color: white;
+			a {
+				color: white;
+			}
+		}
+		p {
+			color: rgba(250,250,250, 0.5);
+		}
+	}
+}
+
+#links {
+	margin-top: 2em;
+}
+.form-control {
+  background-color:#FFFFFF;
+  background-image:none;
+  border:1px solid #CCCCCC;
+  border-radius:4px;
+  box-shadow:rgba(0, 0, 0, 0.075) 0 1px 1px inset;
+  color:#555555;
+  display:block;
+  font-size:14px;
+  height:34px;
+  line-height:1.42857;
+  margin-left:24px;
+  padding:6px 12px;
+  transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width:90%;
+}
+label {
+  display:inline-block;
+  font-weight:bold;
+  margin-bottom:5px;
+  margin-left:24px;
+  max-width:100%;
+}
+
+.col_no a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 25px;
+    display:inline-block;
+}
+
+ul.eazy_menu {
+  display: inline;
+  margin-left:0;
+  padding: 0;
+}
+ul.eazy_menu li {display: inline-block;}
+ul.eazy_menu li:hover {background: #35a846;}
+ul.eazy_menu li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul.eazy_menu li ul.eazy_menu_nest li { 
+  background: #555; 
+  display: block; 
+}
+ul.eazy_menu li ul.eazy_menu_nest li a {display:block !important;} 
+ul.eazy_menu li ul.eazy_menu_nest li:hover {background: #2cdd46;}
+
+.Border_page:hover{
+   background-color:#00ff80;
+}
+
+h2.show_job{
+	
+	background-color:#C0FAFA;
+	padding:10px;
+	font-weight:bold;
+}
+
+h4.show_job_descr{
+	border-style: groove;
+	padding:auto;
+}
+
+.navbar-nav > li > a {
+  font-size:20px;
+  line-height:20px;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+.navbar-nav > li:hover {background:#00ff80;} 
+
+.help-block {
+  color:#737373;
+  display:block;
+  margin-bottom:10px;
+  margin-left:30px;
+  margin-top:5px;
+}
+ 
+.btn-default {
+  background-color:#64e509;
+  border-color:#CCCCCC;
+  color:#333333;
+  
+}
+
+.btn {
+  background-image:none;
+  border:1px solid transparent;
+  border-radius:4px;
+  cursor:pointer;
+  display:inline-block;
+  font-size:14px;
+  font-weight:normal;
+  line-height:1.42857;
+  margin-bottom:0;
+  padding:6px 12px;
+  text-align:center;
+  touch-action:manipulation;
+  user-select:none;
+  vertical-align:middle;
+  white-space:nowrap;
+}

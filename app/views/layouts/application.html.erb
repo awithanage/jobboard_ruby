@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ikman.LK</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    
+
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="#">Ikman.lk</a> -->
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+              <div class="col_no">
+  <ul class="eazy_menu">
+    <li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <ul class="eazy_menu_nest">
+        <li><a class="nav-link" <%= link_to "All Jobs", root_path %></a></li>
+        <li><a class="nav-link" <%= link_to "New Job", new_job_path %></a></li>
+        <% if current_user %>
+        <li><a class="nav-link" <%= link_to "Log Out", destroy_user_session_path, method: :delete, confirm:"Are you sure?"%></a></li>
+        <% else %> 
+        <li><a class <%= link_to "Log In", new_user_session_path %></a></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>
+      
+         
+
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" <%= link_to "All Jobs", root_path %>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" <%= link_to "New Job", new_job_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" </a>
+              
+            </li>
+
+            <% if current_user %>
+            <li class="nav-item">
+        <a class="nav-link" style="position: relative; left: 750px;"  <%= link_to "Log Out", destroy_user_session_path, method: :delete, confirm:"Are you sure?" %> </a>
+         </li>
+            <% else %> 
+         <li class="nav-item">
+        <a class="nav-link" style="position: relative;"  <%= link_to image_tag("icontexto-user-web20-digg.ico", :alt => "rss feed",:width => 60, :height => 60) , new_user_session_path %></a>
+         </li>
+         <% end %>
+          
+          </ul> 
+
+      
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h1 class="my-4" style="font-weight: bold;">Job Type</h1>
+          <div class="list-group">
+            <%  Category.all.each do |category|  %>
+             <a class="list-group-item"<%= link_to category.name, jobs_path(category: category.name) %>  </a>
+			
+			 <% end %>
+       <div class="input-daterange" data-behaviour='datepicker' id="datepicker">
+   <input type="text" class="input-small" name="start" />
+   <span class="add-on">to</span>
+</div>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker()
+  $('[data-behaviour~=datepicker]').datepicker();
+</script>
+
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+          <div class="card mt-4">
+            <!-- <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt=""> -->
+            <div class="card-body" style="background-color:#001a0d;">
+              <h3 class="card-title" style="font-weight: bold; margin-bottom: 10px;color:#e6fff2">Available Post</h3>
+               <% flash.each do |a,b| %>
+             <div class="alert alert-success"> <%= b %>  </div> 
+             <% end %>
+             <div class="card card-outline-secondary my-4">
+            <div class="card-header">
+             
+            </div>
+            
+
+                <%= yield %> 
+                 </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+          <!-- /.card -->
+
+          <!-- <div class="card card-outline-secondary my-4">
+            <div class="card-header">
+             
+            </div>
+            <div class="card-body"> -->
+              
+
+            </div>
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark" style="position: relative; top: 300px;">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+   
+  </body>
+</h500
